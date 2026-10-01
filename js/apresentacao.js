@@ -21,7 +21,13 @@ default:h='<div class="error">Slide não suportado.</div>'}
 return `<div class="slide">${h}</div>`}
 function clamp(i){return Math.max(0,Math.min(slides.length-1,Number(i)||0))}
 function render(){if(!slides.length)return;current=clamp(current);const s=slides[current];$('head').classList.toggle('hidden',['cover','end'].includes(s.type));$('slideTitle').textContent=s.title||'FUNFARM';$('slideIcon').innerHTML=icon(s.icon);$('stage').innerHTML=renderSlide(s);$('progress').style.width=`${((current+1)/slides.length)*100}%`;$('counter').textContent=`SLIDE ${current+1} / ${slides.length}`;document.title=`${s.title||'FUNFARM'} • Apresentação`}
-async function go(i){current=clamp(i);render();try{if(db)await db.ref(`${base}/state`).update({currentSlide:current,updatedAt:firebase.database.ServerValue.TIMESTAMP})}catch(e){console.warn(e)}}
-async function init(){render();try{firebase.initializeApp(window.FUNFARM_FIREBASE_CONFIG);const auth=firebase.auth();await auth.signInAnonymously();db=firebase.database();const snap=await db.ref(`${base}/state/currentSlide`).once('value');if(snap.exists()){current=clamp(snap.val());render()}db.ref(`${base}/state/currentSlide`).on('value',s=>{if(s.exists()){const n=clamp(s.val());if(n!==current){current=n;render()}}});db.ref(`${base}/action`).on('value',s=>{const a=s.val()||{};if(a.type==='HOME'&&a.ts)go(0)})}catch(e){console.error(e)}}
+async function go(i){current=clamp(i);render();try{if(db)await db.ref(`${base}/estado`).update({slideAtual:current,atualizadoEm:firebase.database.ServerValue.TIMESTAMP})}catch(e){console.warn(e)}}
+async function init(){render();try{firebase.initializeApp(window.FUNFARM_FIREBASE_CONFIG);const auth=firebase.auth();await auth.signInAnonymously();db=firebase.database();const snap=await db.ref(`${base}/estado/slideAtual`).once('value');if(snap.exists()){current=clamp(snap.val());render()}db.ref(`${base}/estado/slideAtual`).on('value',s=>{if(s.exists()){const n=clamp(s.val());if(n!==current){current=n;render()}}});await db.ref(`${base}/estado`).update({
+  totalSlides:slides.length,
+  apresentacaoAtiva:true,
+  atualizadoEm:firebase.database.ServerValue.TIMESTAMP
+});
+db.ref(`${base}/estado/apresentacaoAtiva`).onDisconnect().set(false);
+}catch(e){console.error(e)}}
 $('prev').onclick=()=>go(current-1);$('next').onclick=()=>go(current+1);$('home').onclick=()=>go(0);$('fullscreen').onclick=async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()}catch(e){}};window.addEventListener('keydown',e=>{if(['ArrowRight','PageDown','ArrowDown'].includes(e.key)){e.preventDefault();go(current+1)}if(['ArrowLeft','PageUp','ArrowUp','Backspace'].includes(e.key)){e.preventDefault();go(current-1)}if(e.key.toLowerCase()==='f')$('fullscreen').click()});let tx=null;$('stage').addEventListener('touchstart',e=>tx=e.changedTouches[0]?.clientX??null,{passive:true});$('stage').addEventListener('touchend',e=>{if(tx===null)return;const dx=(e.changedTouches[0]?.clientX??tx)-tx;tx=null;if(Math.abs(dx)>70)go(current+(dx<0?1:-1))},{passive:true});init();
 })();
