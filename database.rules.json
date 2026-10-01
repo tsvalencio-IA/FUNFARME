@@ -1,0 +1,40 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "funfarm_apresentacao": {
+      "canais": {
+        "$canal": {
+          ".read": "auth != null",
+          "state": {
+            ".write": "auth != null",
+            "currentSlide": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 50"
+            },
+            "updatedAt": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": {
+              ".validate": false
+            }
+          },
+          "action": {
+            ".write": "auth != null",
+            "type": {
+              ".validate": "newData.isString() && (newData.val() == 'HOME' || newData.val() == 'NEXT' || newData.val() == 'PREV')"
+            },
+            "ts": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": {
+              ".validate": false
+            }
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      }
+    }
+  }
+}

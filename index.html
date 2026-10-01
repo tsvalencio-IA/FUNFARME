@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B3D33">
+<title>FUNFARM • Apresentação e Controle</title>
+<style>
+:root{--g:#28b487;--g2:#0b3d33;--bg:#07110f;--card:#10201c;--mut:#9db1aa;--line:#20352f}
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;background:radial-gradient(circle at 50% 0,#123e33 0,#07110f 48%);color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;display:grid;place-items:center;padding:20px}.wrap{width:min(760px,100%)}.brand{font-size:13px;letter-spacing:.18em;font-weight:900;color:#72e0bd;text-align:center}.title{font-size:clamp(30px,8vw,56px);font-weight:950;line-height:.98;text-align:center;margin:14px 0 10px}.sub{color:var(--mut);text-align:center;line-height:1.6;margin:0 auto 28px;max-width:650px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{display:block;text-decoration:none;color:#fff;background:linear-gradient(145deg,#132820,#0d1916);border:1px solid var(--line);border-radius:26px;padding:26px;min-height:220px;box-shadow:0 24px 70px #0008;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#3b806c}.ico{font-size:42px}.card h2{font-size:25px;margin:18px 0 7px}.card p{color:var(--mut);line-height:1.5;margin:0}.tag{display:inline-block;margin-top:18px;background:#153b31;color:#86e8c7;border:1px solid #2d5c4e;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900;letter-spacing:.06em}.foot{text-align:center;color:#5f786f;font-size:11px;margin-top:22px}@media(max-width:640px){.grid{grid-template-columns:1fr}.card{min-height:180px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand">FUNFARM • GESTÃO AMBIENTAL E CONTINUIDADE</div>
+<div class="title">Apresentação & Controle</div>
+<p class="sub">Dois perfis, sem cadastro de usuários. Abra a apresentação no telão e o controle no celular.</p>
+<div class="grid">
+<a class="card" id="openPresentation" href="apresentacao.html"><div class="ico">🖥️</div><h2>APRESENTAÇÃO</h2><p>Modo telão, responsivo, tela cheia e sincronizado em tempo real.</p><span class="tag">ABRIR NO PC / PROJETOR</span></a>
+<a class="card" id="openControl" href="controle.html"><div class="ico">📱</div><h2>CONTROLE</h2><p>Controle remoto com slide atual, próximo, notas do apresentador e acesso direto a qualquer slide.</p><span class="tag">ABRIR NO CELULAR</span></a>
+</div>
+<div class="foot">Powered by <b>thIAguinho Soluções Digitais</b></div>
+</div>
+<script>
+const qs=location.search;
+document.getElementById('openPresentation').href='apresentacao.html'+qs;
+document.getElementById('openControl').href='controle.html'+qs;
+</script>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
+</body></html>
