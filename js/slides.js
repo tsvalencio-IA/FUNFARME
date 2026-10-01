@@ -72,7 +72,7 @@ window.FUNFARM_SLIDES = [
       {t:'HORÁRIO COMERCIAL',items:['Gestor/dono do processo disponível','Compras e fornecedores acessíveis','Especialista avalia dano e necessidade de intervenção']},
       {t:'NOITE / FIM DE SEMANA',items:['Segurança vai ao local','Manutenção geral/plantão é acionada','Especialista define resposta','Fornecedor emergencial entra se necessário']}
     ],
-    notes:['Destacar a fragilidade de finais de semana, feriados e recessos.','O fluxo deve contemplar dano em estrutura, rede elétrica, estacionamento, via pública e interfaces com áreas vizinhas.']
+    notes:['Destacar a fragilidade de finais de semana, feriados e recessos.','O fluxo deve contemplar dano em estrutura, rede elétrica, estacionamento, via pública e interfaces com áreas vizinhas.','Foi citada uma futura diretriz de arborização e a dimensão aproximada de mil árvores no complexo como justificativa para padronizar o manejo.']
   },
   {
     id:'plantao_interfaces',type:'scenario',icon:'fa-clock',title:'Plantões, recessos e interfaces entre instituições',accent:'FORA DO HORÁRIO COMERCIAL',
@@ -105,7 +105,7 @@ window.FUNFARM_SLIDES = [
     id:'drenagem_externa',type:'beforeafter',icon:'fa-road',title:'Entorno, drenagem e relação com serviços públicos',
     left:{label:'FRAGILIDADES',title:'O risco não termina no portão',items:['Bueiros sem manutenção adequada','Água acumulada em frente ao ambulatório','Contêineres insuficientes em unidades externas','Vegetação e espaços públicos sem fluxo claro de manutenção']},
     right:{label:'GESTÃO',title:'Registrar, cobrar e criar contingência',items:['Ofícios e evidências fotográficas','Responsável institucional pelo acompanhamento','Alternativa interna enquanto o serviço externo não responde','Incluir o entorno no mapa de vulnerabilidade']},
-    notes:['A reunião relata tratativas com o serviço municipal sobre contêineres, bueiros e áreas externas, além de auditoria com fotos e ofícios.','Esses exemplos mostram dependências externas que precisam ser tratadas como risco e não apenas como solicitação operacional.']
+    notes:['A reunião relata tratativas com o serviço municipal sobre contêineres, bueiros e áreas externas, além de auditoria com fotos e ofícios.','Também foi citada a tentativa de formalizar adoção/manutenção de praças ou canteiros do entorno, mostrando a dificuldade de governança em áreas externas.','Esses exemplos mostram dependências externas que precisam ser tratadas como risco e não apenas como solicitação operacional.']
   },
   {
     id:'calor',type:'splitmetric',icon:'fa-temperature-three-quarters',title:'Calor extremo: dois impactos',
@@ -130,7 +130,7 @@ window.FUNFARM_SLIDES = [
     id:'energia',type:'flow',icon:'fa-bolt',title:'Energia e infraestrutura crítica',
     nodes:['Árvores e rede elétrica','Monitoramento / alarme','Segurança verifica','Central abre OS','Manutenção / hotelaria','Especialista / fornecedor'],
     footer:'Contingência precisa funcionar mesmo quando o dono do processo não está presente.',
-    notes:['Foi relatado fluxo já estabelecido para queda de galho em rede elétrica.','A gestão também discute poda preventiva, geradores, concessionária e monitoramento de oscilações.']
+    notes:['Foi relatado fluxo já estabelecido para queda de galho em rede elétrica.','A gestão também discute poda preventiva, geradores, concessionária e monitoramento de oscilações.','A transcrição cita atuação com a CPFL, um centro de operação integrado e doze árvores próximas aos geradores como pontos que exigem mitigação.']
   },
   {
     id:'raios_desastres',type:'grid',icon:'fa-cloud-bolt',title:'Descargas atmosféricas e desastres externos',
@@ -188,7 +188,7 @@ window.FUNFARM_SLIDES = [
       {i:'fa-truck',t:'TRANSPORTE',d:'Movimentação correta e rastreável.'},
       {i:'fa-industry',t:'TRATAMENTO',d:'Tratamento e destinação final adequados.'}
     ],
-    notes:['A reunião critica delegar toda a responsabilidade ao serviço de limpeza/parque de resíduos.','Gestores e unidades geradoras precisam treinar, conferir e auditar o que é produzido.']
+    notes:['A reunião critica delegar toda a responsabilidade ao serviço de limpeza/parque de resíduos.','Gestores e unidades geradoras precisam treinar, conferir e auditar o que é produzido.','Foram citados como exemplos positivos a Imodialis, que reviu classificação e treinamento, e as UTIs do HB com iniciativa de TI Verde para rever consumo e descarte.']
   },
   {
     id:'comite_residuos',type:'grid',icon:'fa-people-roof',title:'Comitê de resíduos: do gerador à destinação',
@@ -213,7 +213,7 @@ window.FUNFARM_SLIDES = [
     big:'DEPOIS DO CONTRATO, A LOGÍSTICA REVERSA FICA MUITO MAIS DIFÍCIL',
     text:'O solicitante precisa conhecer descarte, reciclabilidade, reutilização e possibilidade de logística reversa antes de fechar a contratação.',
     tags:['descritivo técnico','fornecedor','logística reversa','ciclo de vida'],
-    notes:['A reunião relata resistência de fornecedores já contratados à logística reversa.','O tema deve entrar no descritivo e na conversa com o fornecedor antes da contratação.']
+    notes:['A reunião relata resistência de fornecedores já contratados à logística reversa e afirma que as tentativas com contratos já vigentes não tiveram adesão.','O tema deve entrar no descritivo e na conversa com o fornecedor antes da contratação.']
   },
   {
     id:'carbono',type:'metriccards',icon:'fa-cloud',title:'Emissões e descarbonização',
@@ -247,7 +247,7 @@ window.FUNFARM_SLIDES = [
       {t:'PROBLEMA',items:['Conhecimento informal','Pessoas novas sem referência','Acionamentos diferentes por setor','Demora até encontrar especialista']},
       {t:'SOLUÇÃO',items:['Fluxo institucional','Referência técnica definida','Notificação','Treinamento','Divulgação rápida']}
     ],
-    notes:['Foram citados ataques de abelhas, picada de escorpião e necessidade de fluxo para animais encontrados no complexo.','A meta é formalizar o que hoje depende de saber “para quem ligar”.']
+    notes:['Foram citados ataques de abelhas, picada de escorpião e necessidade de fluxo para animais encontrados no complexo.','A transcrição menciona também gambá, animal morto/urubu e acionamento de zoonoses como exemplos de situações em que faltava orientação clara.','Para terceiros/jardineiros, foi discutido formalizar atendimento, notificação e orientação em caso de picada de escorpião.']
   },
   {
     id:'manutencao',type:'process',icon:'fa-screwdriver-wrench',title:'Manutenção, OS, patrimônio e custos',
@@ -273,7 +273,7 @@ window.FUNFARM_SLIDES = [
     id:'documentos',type:'beforeafter',icon:'fa-folder-tree',title:'Governança documental',
     left:{label:'RISCO',title:'Documentos repetidos ou desalinhados',items:['Diretrizes e procedimentos falando a mesma coisa','Documento antigo ainda vigente','Treinamento sobre versão errada','Fluxos dispersos']},
     right:{label:'AÇÃO',title:'Revisar antes de treinar',items:['Mapear documentos vigentes','Unificar duplicidades','Obsoletar o que não serve','Atualizar e só então capacitar']},
-    notes:['A reunião cita documentos repetidos no sistema documental.','Antes do treinamento, é essencial verificar o que realmente deve permanecer vigente.']
+    notes:['A reunião cita documentos repetidos no sistema documental, inclusive diretrizes e procedimentos tratando do mesmo assunto.','Antes do treinamento, é essencial verificar o que realmente deve permanecer vigente, o que deve ser atualizado e o que precisa ser obsoletado.','Também foi levantada a necessidade de conferir se procedimentos operacionais continuam alinhados às diretrizes mais recentes.']
   },
   {
     id:'acao',type:'actionplan',icon:'fa-clipboard-check',title:'Plano de ação imediato',
