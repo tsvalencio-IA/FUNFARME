@@ -2,36 +2,34 @@
   "rules": {
     ".read": false,
     ".write": false,
+
     "funfarm_apresentacao": {
       "canais": {
         "$canal": {
           ".read": "auth != null",
-          "state": {
+
+          "estado": {
             ".write": "auth != null",
-            "currentSlide": {
+
+            "slideAtual": {
               ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 50"
             },
-            "updatedAt": {
+
+            "totalSlides": {
+              ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 50"
+            },
+
+            "atualizadoEm": {
               ".validate": "newData.isNumber()"
             },
-            "$other": {
+
+            "apresentacaoAtiva": {
+              ".validate": "newData.isBoolean()"
+            },
+
+            "$outros": {
               ".validate": false
             }
-          },
-          "action": {
-            ".write": "auth != null",
-            "type": {
-              ".validate": "newData.isString() && (newData.val() == 'HOME' || newData.val() == 'NEXT' || newData.val() == 'PREV')"
-            },
-            "ts": {
-              ".validate": "newData.isNumber()"
-            },
-            "$other": {
-              ".validate": false
-            }
-          },
-          "$other": {
-            ".validate": false
           }
         }
       }
